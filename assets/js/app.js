@@ -75,6 +75,7 @@ function sumResult() {
 function countReset() {
   count1 = 0;
   count2 = 20;
+  countResult = count1 + count2;
   numTwo.textContent = count1;
   numOne.textContent = count2;
   numResult.textContent = countResult;
