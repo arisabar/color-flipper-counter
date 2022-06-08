@@ -41,26 +41,45 @@ let count2 = 20;
 
 btnIncrease.addEventListener("click", () => {
   // count1++;
-  sumResult(count1++);
-  if (count1 > 21) {
+  count1 += 1;
+  if (count1 > 20) {
     count1 = 20;
+    return;
   }
+  sumResult(count1);
   numTwo.textContent = parseInt(count1);
-  console.log(numTwo);
+  // console.log(`increase`, count1);
 });
 btnDecrease.addEventListener("click", () => {
   // count2--;
-  sumResult(count2--);
-  if (count2 < -1) {
+  count2 -= 1;
+  if (count2 < 0) {
     count2 = 0;
+    return;
   }
+  sumResult(count2);
   numOne.textContent = count2;
+  // console.log("decrease", count2);
+});
+
+btnReset.addEventListener("click", () => {
+  countReset();
 });
 
 function sumResult() {
-  let hasil = count1 + count2;
-  numResult.innerHTML = hasil;
+  countResult = count1 + count2;
+  numResult.innerHTML = countResult;
+  // console.log(countResult);
 }
+
+function countReset() {
+  count1 = 0;
+  count2 = 20;
+  numTwo.textContent = count1;
+  numOne.textContent = count2;
+  numResult.textContent = countResult;
+}
+sumResult();
 
 // sumResult(numOne, numTwo);
 // console.log(sumResult());
